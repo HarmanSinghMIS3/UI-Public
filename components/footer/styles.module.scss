@@ -1,0 +1,97 @@
+@use "../../styles/scss/vars";
+
+.legalFontSize {
+
+    &__container {
+        width: 100%;
+        display: flex;
+
+        @media #{vars.screenMinWidth(vars.$tabletBreakpoint)} {
+            width: auto;
+            display: inline-block;
+        }
+
+    }
+
+    &__p {
+        margin: {
+            right: auto;
+            bottom: 0.9em;
+            left: auto;
+        }
+        display: inline-block;
+        font-size: vars.$legalFontSizeXs;
+
+        @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+            font-size: vars.$legalFontSizeLg;
+        }
+
+    }
+
+}
+
+.logoCoatOfArms {
+    
+    /*
+    &__container {
+        width: 2.5em; // 40px
+        height: 2.688em; // 43px
+    }
+    */
+
+}
+
+.footerNavigation {
+
+    &__container {
+        
+        @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+            display: flex;
+        }
+
+    }
+
+    &__ul {
+        margin-bottom: 0;
+        list-style-type: none;
+
+        @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+            padding-left: 0;
+            display: flex;
+        }
+
+    }
+
+    &__li {
+        margin: 0.25em 0;
+        text-align: right;
+
+        @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+            margin-left: 0.25em;
+        }
+
+    }
+
+    &__link {
+        padding: 0.25em 0.6em;
+        display: inline-block;
+        font-size: 0.85rem;
+        text-decoration: none;
+        color: vars.$bodyBlack;
+        border: {
+            width: 0.125em;
+            style: solid;
+            color: vars.$buttonBorderGrey;
+            radius: 0.5em;
+        }
+        background-color: vars.$white;
+
+        &:hover, &:focus {
+            color: vars.$white;
+            text-decoration: none;
+            background-color: vars.$bodyBlack;
+        }
+
+    }
+
+}

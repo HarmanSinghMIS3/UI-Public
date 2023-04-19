@@ -1,0 +1,13 @@
+@use "../../styles/scss/vars";
+
+.secondaryPageHeader {
+    
+    &__container {
+        margin-top: 3.25em;
+    }
+
+    &__heading {
+        color: vars.$bodyBlack;
+    }
+
+}

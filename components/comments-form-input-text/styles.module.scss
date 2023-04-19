@@ -1,0 +1,9 @@
+@use "../../styles/scss/vars";
+
+.commentsForm {
+
+    &__invalidFeedback {
+        display: inline-block;
+    }
+
+}
