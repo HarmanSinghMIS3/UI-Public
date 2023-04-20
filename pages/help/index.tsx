@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 
 import { setActivePage } from '@/utils/set-active-page'
 import { HELP } from '@/constants/help'
@@ -19,7 +19,7 @@ export default function Help() {
         questionsAnswers
     } = HELP
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setActivePage(settings, setSettings)
     }, [])
 

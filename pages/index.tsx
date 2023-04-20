@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 */
 
 // import styles from '@/styles/Home.module.css'
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 
 import { setActivePage } from '@/utils/set-active-page'
 import { GLOBAL } from '@/constants/global'
@@ -24,7 +24,7 @@ export default function Home() {
   const { newBrowserDesc } = GLOBAL
   const { title, link } = LOGIN
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setActivePage(settings, setSettings)
   }, [])
 

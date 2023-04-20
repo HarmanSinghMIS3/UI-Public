@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 
 import { setActivePage } from '@/utils/set-active-page'
 import { COMMENTS } from '@/constants/comments'
@@ -21,7 +21,7 @@ export default function Comments() {
         introduction
     } = COMMENTS
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setActivePage(settings, setSettings)
     }, [])
 

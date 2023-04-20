@@ -1,8 +1,11 @@
 import { useFsraContext } from '@/contexts/fsra'
 import { GLOBAL } from '@/constants/global'
+import { MouseEvent } from 'react'
+
 import { NAVIGATION } from '@/constants/navigation'
 
 import isActivePage from '@/utils/is-active-page'
+import blockActiveLinkClick from '@/utils/block-active-link-click'
 import Hamburger from '@/public/images/components/icon-hamburger'
 
 import styles from '@/components/header/styles.module.scss'
@@ -25,6 +28,7 @@ export default function Header() {
                         className={`${styles.header__navigation__link}${isActive ? ' ' + styles['header__navigation__link__active'] : ''}`}
                         role={!li.href ? 'button' : undefined}
                         aria-current={isActive ? 'page' : undefined}
+                        onClick={e => blockActiveLinkClick(e, isActive)}
                     >
                         {li.label[lang]}
                     </a>

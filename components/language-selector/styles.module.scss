@@ -1,25 +1,18 @@
 @use "../../styles/scss/vars";
+@use "../../styles/scss/buttons";
 
 .languageSelector {
 
     &__button {
-        padding: 0.25em 0.6em;
-        display: inline-block;
-        font-size: 0.85rem;
-        color: vars.$white;
-        border: {
-            width: 0.125em;
-            style: solid;
-            color: vars.$bodyBlack;
-            radius: 0.5em;
-        }
-        background-color: vars.$bodyBlack;
+        @extend .button;
+        color: vars.$bodyBlack;
+        border-color: vars.$buttonBorderGrey;
+        background-color: vars.$white;
 
         &:hover, &:focus {
-            color: vars.$bodyBlack;
-            text-decoration: none;
-            border-color: vars.$buttonBorderGrey;
-            background-color: vars.$white;
+            color: vars.$white;
+            border-color: vars.$bodyBlack;
+            background-color: vars.$bodyBlack;
         }
         
     }

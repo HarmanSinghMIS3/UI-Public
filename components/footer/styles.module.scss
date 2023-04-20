@@ -1,4 +1,5 @@
 @use "../../styles/scss/vars";
+@use "../../styles/scss/buttons";
 
 .legalFontSize {
 
@@ -27,17 +28,6 @@
         }
 
     }
-
-}
-
-.logoCoatOfArms {
-    
-    /*
-    &__container {
-        width: 2.5em; // 40px
-        height: 2.688em; // 43px
-    }
-    */
 
 }
 
@@ -73,23 +63,25 @@
     }
 
     &__link {
-        padding: 0.25em 0.6em;
-        display: inline-block;
-        font-size: 0.85rem;
-        text-decoration: none;
+        @extend .button;
         color: vars.$bodyBlack;
-        border: {
-            width: 0.125em;
-            style: solid;
-            color: vars.$buttonBorderGrey;
-            radius: 0.5em;
-        }
+        border-color: vars.$buttonBorderGrey;
         background-color: vars.$white;
 
         &:hover, &:focus {
             color: vars.$white;
-            text-decoration: none;
             background-color: vars.$bodyBlack;
+        }
+
+        &--active {
+            color: vars.$white;
+            background-color: vars.$bodyBlack;
+
+            &:hover, &:focus {
+                color: vars.$bodyBlack;
+                background-color: vars.$white;
+            }
+
         }
 
     }

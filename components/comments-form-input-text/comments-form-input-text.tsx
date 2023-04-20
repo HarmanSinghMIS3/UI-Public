@@ -2,6 +2,7 @@ import { FC, ChangeEvent } from 'react'
 
 import { useFsraContext } from '@/contexts/fsra'
 import { LangObjShape } from '@/constants/types'
+import { AUTOCOMPLETE_TOKENS } from '@/constants/autocomplete-tokens'
 
 import styles from '@/components/comments-form-input-text/styles.module.scss'
 
@@ -18,36 +19,40 @@ type CommentsFormInputTextProps = {
 
 const CommentsFormInputText: FC<CommentsFormInputTextProps> = ({ inputId, inputLabel, textInputType, changeInputValues, setInput, required, inputValidation, invalidInputAlert }: CommentsFormInputTextProps) => {
     const { settings: { lang } } = useFsraContext()
+    const { email } = AUTOCOMPLETE_TOKENS
 
     return (
-        <div className='mb-3'>
+        <div className={`mb-3${textInputType !== 'textarea' ? ' ' + styles['commentsForm__inputTextContainer'] : ''}${!inputValidation[inputId] ? ' ' + styles['commentsForm__inputTextContainer--error'] : ''}`}>
             <label
                 htmlFor={inputId}
-                className='form-label'
+                className={`form-label ${styles.commentsForm__label}`}
             >
                 {inputLabel[lang]}
             </label>
-            {
-                textInputType !== 'textarea' ?
-                        <input
-                            type={textInputType}
-                            className='form-control'
+            <div className={styles.commentsForm__inputWrapper}>
+                {
+                    textInputType !== 'textarea' ?
+                            <input
+                                type={textInputType}
+                                className={`form-control ${styles.commentsForm__input}`}
+                                id={inputId}
+                                onChange={e => changeInputValues(e, setInput)}
+                                required={required}
+                                aria-describedby={!inputValidation[inputId] ? `${inputId}-desc` : undefined}
+                                autoComplete={inputId === 'email' ? email : undefined}
+                            />
+                        :
+                        <textarea
+                            className={`form-control ${styles.commentsForm__input}`}
                             id={inputId}
                             onChange={e => changeInputValues(e, setInput)}
                             required={required}
                             aria-describedby={!inputValidation[inputId] ? `${inputId}-desc` : undefined}
                         />
-                    :
-                    <textarea
-                        className='form-control'
-                        id={inputId}
-                        onChange={e => changeInputValues(e, setInput)}
-                        required={required}
-                        aria-describedby={!inputValidation[inputId] ? `${inputId}-desc` : undefined}
-                    />
-            }
+                }
+            </div>
             {
-                !inputValidation['email'] &&
+                !inputValidation[inputId] &&
                     <p
                         className={`invalid-feedback ${styles.commentsForm__invalidFeedback}`}
                         id={`${inputId}-desc`}

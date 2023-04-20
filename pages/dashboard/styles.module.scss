@@ -1,4 +1,5 @@
 @use "../../styles/scss/vars";
+@use "../../styles/scss/buttons";
 
 .userTime {
 
@@ -33,24 +34,13 @@
     }
 
     &__button {
-        padding: 0.25em 0.6em;
-        display: inline-block;
-        font-size: 0.85rem;
-        text-decoration: none;
+        @extend .button;
         color: vars.$white;
-
-        border: {
-            width: 0.125em;
-            style: solid;
-            color: vars.$bodyBlack;
-            radius: 0.5em;
-        }
-
+        border-color: vars.$bodyBlack;
         background-color: vars.$bodyBlack;
 
         &:hover, &:focus {
             color: vars.$bodyBlack;
-            text-decoration: none;
             border-color: vars.$buttonBorderGrey;
             background-color: vars.$white;
         }

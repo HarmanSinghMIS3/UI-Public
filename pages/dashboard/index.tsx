@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 
 import { setActivePage } from '@/utils/set-active-page'
 import { DASHBOARD } from '@/constants/dashboard'
@@ -26,7 +26,7 @@ export default function Dashboard() {
     } = DASHBOARD
     const { logOut } = NAVIGATION
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setActivePage(settings, setSettings)
     }, [])
 

@@ -5,6 +5,7 @@ import { GLOBAL } from '@/constants/global'
 import { NAVIGATION } from '@/constants/navigation'
 
 import isActivePage from '@/utils/is-active-page'
+import blockActiveLinkClick from '@/utils/block-active-link-click'
 import LanguageSelector from '@/components/language-selector/language-selector'
 import LogoOntarioCoatOfArms from '@/public/images/components/logo-ontario-coat-of-arms'
 
@@ -25,8 +26,9 @@ export default function Footer() {
                 >
                     <a
                         href={li.href}
-                        className={`${styles.footerNavigation__link}${isActive ? ' ' + styles['footerNavigation__link__active'] : ''}`}
+                        className={`${styles.footerNavigation__link}${isActive ? ' ' + styles['footerNavigation__link--active'] : ''}`}
                         aria-current={isActive ? 'page' : undefined}
+                        onClick={e => blockActiveLinkClick(e, isActive)}
                     >
                         {li.label[lang]}
                     </a>
