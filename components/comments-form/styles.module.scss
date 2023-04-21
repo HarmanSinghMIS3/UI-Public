@@ -2,6 +2,10 @@
 
 .commentsForm {
 
+    &__legend {
+        margin-top: 1.5em;
+    }
+
     &__alertHeading {
 
         &--fail {

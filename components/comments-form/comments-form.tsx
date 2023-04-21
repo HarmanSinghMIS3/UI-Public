@@ -80,7 +80,7 @@ export default function CommentsForm() {
 
     return (
         <>
-            <p>{legend[lang]}</p>
+            <p className={styles.commentsForm__legend}>{legend[lang]}</p>
             {
                 invalidValidAlert &&
                     <h2

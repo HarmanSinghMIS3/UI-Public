@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { AuthenticatedTemplate } from '@azure/msal-react'
 
 import { setActivePage } from '@/utils/set-active-page'
 import { DASHBOARD } from '@/constants/dashboard'
@@ -31,7 +32,7 @@ export default function Dashboard() {
     }, [])
 
     return (
-        <>
+        <AuthenticatedTemplate>
             <DocumentHead
                 title={title[lang]}
             />
@@ -62,8 +63,10 @@ export default function Dashboard() {
                                 </ul>
                             </div>
                             <div className='col-12 col-md-7 col-lg-8'>
-                                <p className='lead'>{instructionsLead[lang]}</p>
-                                <p>{instructions[lang]}</p>
+                                {/*
+                                    <p className='lead'>{instructionsLead[lang]}</p>
+                                    <p>{instructions[lang]}</p>
+                                */}
                                 <DashboardGenerateReport />
                             </div>
                         </div>
@@ -71,6 +74,6 @@ export default function Dashboard() {
                 </article>
             </main>
             <Footer />
-        </>
+        </AuthenticatedTemplate>
     )
 }

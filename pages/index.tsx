@@ -5,7 +5,8 @@ import { Inter } from 'next/font/google'
 */
 
 // import styles from '@/styles/Home.module.css'
-import { useEffect } from 'react'
+import { useEffect, MouseEvent } from 'react'
+import { UnauthenticatedTemplate, useMsal } from '@azure/msal-react'
 
 import { setActivePage } from '@/utils/set-active-page'
 import { GLOBAL } from '@/constants/global'
@@ -23,13 +24,19 @@ export default function Home() {
   const { settings, settings: { lang }, setSettings } = useFsraContext()
   const { newBrowserDesc } = GLOBAL
   const { title, link } = LOGIN
+  const { instance } = useMsal()
 
   useEffect(() => {
     setActivePage(settings, setSettings)
   }, [])
 
+  const initializeSignIn = (event: MouseEvent) => {
+    event.preventDefault()
+    instance.loginRedirect()
+  }
+
   return (
-    <>
+    <UnauthenticatedTemplate>
       <DocumentHead
         title={title[lang]}
       />
@@ -47,6 +54,7 @@ export default function Home() {
                     target='_blank'
                     role='button'
                     className="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"
+                    onClick={e => initializeSignIn(e)}
                   >
                     {link[lang]}
                     <span className='visually-hidden'>{newBrowserDesc[lang]}</span>
@@ -162,6 +170,6 @@ export default function Home() {
         */}
       </main>
       <Footer />
-    </>
+    </UnauthenticatedTemplate>
   )
 }

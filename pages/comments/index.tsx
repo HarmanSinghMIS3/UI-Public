@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { UnauthenticatedTemplate } from '@azure/msal-react'
 
 import { setActivePage } from '@/utils/set-active-page'
 import { COMMENTS } from '@/constants/comments'
@@ -26,7 +27,7 @@ export default function Comments() {
     }, [])
 
     return (
-        <>
+        <UnauthenticatedTemplate>
             <DocumentHead
                 title={title[lang]}
             />
@@ -35,13 +36,15 @@ export default function Comments() {
                 <article>
                     <SecondaryPageHeader heading={heading[lang]} />
                     <div className='container'>
+                        {/*
                         <p className='lead'>{introductionLead[lang]}</p>
                         <p>{introduction[lang]}</p>
+                        */}
                         <CommentsForm />
                     </div>
                 </article>
             </main>
             <Footer />
-        </>
+        </UnauthenticatedTemplate>
     )
 }

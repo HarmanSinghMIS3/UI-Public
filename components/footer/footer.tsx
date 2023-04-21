@@ -7,7 +7,8 @@ import { NAVIGATION } from '@/constants/navigation'
 import isActivePage from '@/utils/is-active-page'
 import blockActiveLinkClick from '@/utils/block-active-link-click'
 import LanguageSelector from '@/components/language-selector/language-selector'
-import LogoOntarioCoatOfArms from '@/public/images/components/logo-ontario-coat-of-arms'
+// import LogoOntarioCoatOfArms from '@/public/images/components/logo-ontario-coat-of-arms'
+import PlaceholderLogoFooter from '@/public/images/components/placeholder-logo-footer'
 
 import styles from '@/components/footer/styles.module.scss'
 
@@ -46,9 +47,9 @@ export default function Footer() {
                         <p className={`${styles.legalFontSize__p}`}>{copyrightSymbol[lang]} {getCurrentYear()} {fsraFullName[lang]}</p>
                     </div>
                     <div className={`${styles.logoCoatOfArms__container}`}>
-                        <LogoOntarioCoatOfArms
-                            svgStyleKey='ontarioCoat0fArms__svg__footer'
-                            pathStyleKey='ontarioCoat0fArms__path__footer'
+                        <PlaceholderLogoFooter
+                            svgStyleKey='placeholderLogoFooter__svg__footer'
+                            pathStyleKey='placeholderLogoFooter__path__footer'
                         />
                     </div>
                     <div className={styles.footerNavigation__container}>

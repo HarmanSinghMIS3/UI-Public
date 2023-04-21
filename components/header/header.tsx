@@ -1,6 +1,5 @@
 import { useFsraContext } from '@/contexts/fsra'
 import { GLOBAL } from '@/constants/global'
-import { MouseEvent } from 'react'
 
 import { NAVIGATION } from '@/constants/navigation'
 
@@ -11,12 +10,17 @@ import Hamburger from '@/public/images/components/icon-hamburger'
 import styles from '@/components/header/styles.module.scss'
 
 export default function Header() {
-    const { settings: { lang } } = useFsraContext()
+    const { settings: { activePage, lang } } = useFsraContext()
     const { fsraAbbr, fsraAbbrTitle } = GLOBAL
     const { homeLinkDesc, globalNav, expandHeaderNavigationLabel } = NAVIGATION
+    /*
+    Remove the “Dashboard” link and the “Logout” button from the 
+    header’s navigation list if the home page is the current, active page:
+    */
+    const filteredGlobalNav = globalNav.filter(li => activePage !== '' || ((!activePage && li.href) && (!activePage && li.page !== 'dashboard')))
 
     const generateHeaderNavigationLis = () => {
-        const headerNavigationLis = globalNav.map((li, i) => {
+        const headerNavigationLis = filteredGlobalNav.map((li, i) => {
             const isActive = li.page ? isActivePage(li.page) : false
             return (
                 <li

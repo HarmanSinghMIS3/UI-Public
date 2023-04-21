@@ -30,5 +30,9 @@ export const GLOBAL = {
     coatOfArms: {
         'en-CA': 'Ontario’s Coat of Arms (English)',
         'fr-CA': 'Ontario’s Coat of Arms (French)'
+    },
+    placeholder: {
+        'en-CA': 'Placeholder image (English)',
+        'fr-CA': 'Placeholder image (French)'
     }
 }

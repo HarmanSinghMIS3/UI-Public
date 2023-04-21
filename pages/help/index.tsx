@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { UnauthenticatedTemplate } from "@azure/msal-react"
 
 import { setActivePage } from '@/utils/set-active-page'
 import { HELP } from '@/constants/help'
@@ -16,6 +17,7 @@ export default function Help() {
         heading,
         introductionLead,
         introduction,
+        introductionClosing,
         questionsAnswers
     } = HELP
 
@@ -23,6 +25,7 @@ export default function Help() {
         setActivePage(settings, setSettings)
     }, [])
 
+    /*
     const generateAccordionItems = () => {
         const accordionItems = questionsAnswers.map((qa, i) => {
             return (
@@ -56,9 +59,10 @@ export default function Help() {
         })
         return accordionItems
     }
+    */
 
     return (
-        <>
+        <UnauthenticatedTemplate>
             <DocumentHead
                 title={title[lang]}
             />
@@ -70,16 +74,19 @@ export default function Help() {
                     <div className='container'>
                         <p className='lead'>{introductionLead[lang]}</p>
                         <p>{introduction[lang]}</p>
+                        <p>{introductionClosing[lang]}</p>
+                        {/*
                         <div
                             className='accordion'
                             id='accordionExample'
                         >
                             {generateAccordionItems()}
                         </div>
+                        */}
                     </div>
                 </article>
             </main>
             <Footer />
-        </>
+        </UnauthenticatedTemplate>
     )
 }

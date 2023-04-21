@@ -4,16 +4,20 @@ export const HELP = {
         'fr-CA': 'Help Page (French)'
     },
     heading: {
-        'en-CA': 'Help (English)',
-        'fr-CA': 'Help (French)'
+        'en-CA': 'HELP PAGE IS CURRENTLY UNDER CONSTRUCTION (English)',
+        'fr-CA': 'HELP PAGE IS CURRENTLY UNDER CONSTRUCTION (French)'
     },
     introductionLead: {
-        'en-CA': 'English lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        'fr-CA': 'English lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        'en-CA': 'During phase III of this project MIS3 will be working with the Credit Unions and FSRA to design a Help page that meets the end users needs and desires.',
+        'fr-CA': 'During phase III of this project MIS3 will be working with the Credit Unions and FSRA to design a Help page that meets the end users needs and desires.'
     },
     introduction: {
-        'en-CA': 'Cras ullamcorper non est et volutpat. Etiam eleifend nulla ex, vel dignissim justo feugiat eleifend. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi tempor eros et volutpat efficitur. Aliquam rutrum venenatis sapien ut molestie. Integer a purus at eros mollis tincidunt eu ac orci. Integer vulputate lacus eu blandit viverra. Nunc viverra vulputate ante, vel volutpat eros. Ut vitae aliquet lacus.',
-        'fr-CA': 'Cras ullamcorper non est et volutpat. Etiam eleifend nulla ex, vel dignissim justo feugiat eleifend. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi tempor eros et volutpat efficitur. Aliquam rutrum venenatis sapien ut molestie. Integer a purus at eros mollis tincidunt eu ac orci. Integer vulputate lacus eu blandit viverra. Nunc viverra vulputate ante, vel volutpat eros. Ut vitae aliquet lacus.'
+        'en-CA': 'This will include details to contact help via email//phone, Q&A of the most frequent help questions and training assistance for new users.',
+        'fr-CA': 'This will include details to contact help via email//phone, Q&A of the most frequent help questions and training assistance for new users.'
+    },
+    introductionClosing: {
+        'en-CA': 'Thank you.',
+        'fr-CA': 'Merci.'
     },
     questionsAnswers: [
         {
