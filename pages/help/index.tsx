@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { UnauthenticatedTemplate } from "@azure/msal-react"
 
 import { setActivePage } from '@/utils/set-active-page'
 import { HELP } from '@/constants/help'
@@ -62,7 +61,7 @@ export default function Help() {
     */
 
     return (
-        <UnauthenticatedTemplate>
+        <>
             <DocumentHead
                 title={title[lang]}
             />
@@ -87,6 +86,6 @@ export default function Help() {
                 </article>
             </main>
             <Footer />
-        </UnauthenticatedTemplate>
+        </>
     )
 }

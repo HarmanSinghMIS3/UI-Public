@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { AuthenticatedTemplate } from '@azure/msal-react'
 
 import { setActivePage } from '@/utils/set-active-page'
 import { DASHBOARD } from '@/constants/dashboard'
@@ -32,7 +31,7 @@ export default function Dashboard() {
     }, [])
 
     return (
-        <AuthenticatedTemplate>
+        <>
             <DocumentHead
                 title={title[lang]}
             />
@@ -74,6 +73,6 @@ export default function Dashboard() {
                 </article>
             </main>
             <Footer />
-        </AuthenticatedTemplate>
+        </>
     )
 }
