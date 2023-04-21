@@ -1,0 +1,10 @@
+@use "../../styles/scss/vars";
+
+.loginHeader {
+
+    &__heading {
+        margin-bottom: 1em;
+        color: vars.$bodyBlack;
+    }
+
+}

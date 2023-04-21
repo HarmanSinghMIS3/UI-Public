@@ -1,0 +1,39 @@
+@use "../../styles/scss/vars";
+
+.commentsForm {
+
+    &__legend {
+        margin-top: 1.5em;
+    }
+
+    &__alertHeading {
+
+        &--fail {
+
+            &:focus {
+                color: vars.$errorRed;
+            }
+
+        }
+
+        &--success {
+
+            &:focus {
+                color: vars.$successGreen;
+            }
+
+        }
+
+    }
+
+    &__errorListItemLink {
+        color: vars.$errorRed;
+
+        &:hover,
+        &:focus {
+            color: vars.$black;
+        }
+
+    }
+
+}
