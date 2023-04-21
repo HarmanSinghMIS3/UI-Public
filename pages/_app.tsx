@@ -3,21 +3,14 @@ import { useState, useEffect } from 'react'
 
 import { MsalProvider } from '@azure/msal-react'
 import { Configuration, PublicClientApplication } from '@azure/msal-browser'
+import { msalConfig } from '@/pages/api/auth/authConfig'
 
 // import '@/styles/globals.css'
 import '@/styles/scss/base.scss'
 
 import { SettingsShape, FsraContext } from '@/contexts/fsra'
 
-const msalConfig: Configuration = {
-  auth: {
-    clientId: '96ac3f26-2ea4-46a9-904b-4fa58e9ed2b0',
-    authority: 'https://fsraob2cedc.b2clogin.com/fsraob2cedc.onmicrosoft.com/b2c_1_edc_poc',
-    redirectUri: '/dashboard'
-  }
-}
-
-const pca = new PublicClientApplication(msalConfig)
+export const msalInstance = new PublicClientApplication(msalConfig)
 
 export default function App({ Component, pageProps }: AppProps) {
   const [ settings, setSettings ] = useState<SettingsShape>({
@@ -30,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <MsalProvider instance={pca}>
+    <MsalProvider instance={msalInstance}>
       <FsraContext.Provider value={{ settings, setSettings }}>
         <Component {...pageProps} />
       </FsraContext.Provider>

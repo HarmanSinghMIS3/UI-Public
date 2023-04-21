@@ -12,6 +12,7 @@ import { setActivePage } from '@/utils/set-active-page'
 import { GLOBAL } from '@/constants/global'
 import { LOGIN } from '@/constants/login'
 import { useFsraContext } from '@/contexts/fsra'
+import { loginRequest } from '@/pages/api/auth/authConfig'
 
 import DocumentHead from '@/components/document-head'
 import Header from '@/components/header/header'
@@ -32,7 +33,7 @@ export default function Home() {
 
   const initializeSignIn = (event: MouseEvent) => {
     event.preventDefault()
-    instance.loginRedirect()
+    instance.loginRedirect(loginRequest).catch(e => console.error(`loginRedirect failed: ${e}`))
   }
 
   return (
