@@ -1,0 +1,114 @@
+@use "../../styles/scss/vars";
+@use "../../styles/scss/buttons";
+
+.header {
+
+    &__container {
+        display: block;
+        background-color: vars.$headerBlack;
+    }
+
+    &__navigation {
+        padding: {
+            right: 0;
+            left: 0;
+        }
+        
+        &__homeLink {
+            color: vars.$white;
+
+            &:hover, &:focus {
+                color: vars.$white;
+            }
+    
+            &__acronym {
+    
+                &:hover {
+                    cursor: pointer;
+                }
+    
+            }
+    
+        }
+
+        &__hamburger {
+            color: vars.$hamburgerWhite;
+            border-color: vars.$hamburgerBorder;
+
+            $svgWidth: 1.875em;
+
+            &__icon {
+                width: $svgWidth;
+                height: $svgWidth;
+                display: block;
+                stroke: vars.$hamburgerWhite;
+                stroke: {
+                    width: 2;
+                    linecap: round;
+                    miterlimit: 10;
+                }
+            }
+
+        }
+
+        &__ul {
+            width: 100%;
+        }
+
+        &__li {
+            margin: {
+                top: 0.125em;
+                bottom: 0.125em;
+            }
+
+            @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+                margin: {
+                    top: 0.15em;
+                    right: 0.5em;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            &__logout {
+
+                @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+                    margin: {
+                        right: 0;
+                        left: auto;
+                    }
+                }
+
+            }
+
+        }
+
+        &__link {
+            @extend .button;
+            color: vars.$white;
+            border-color: vars.$white;
+            background-color: vars.$headerBlack;
+
+            &:hover, &:focus {
+                color: vars.$headerBlack;
+                border-color: vars.$headerBlack;
+                background-color: vars.$white;
+            }
+
+            &__active {
+                color: vars.$headerBlack;
+                border-color: vars.$headerBlack;
+                background-color: vars.$white;
+            
+                &:hover, &:focus {
+                    color: vars.$white;
+                    border-color: vars.$white;
+                    background-color: vars.$headerBlack;
+                }
+            }
+
+        }
+
+    }
+
+}

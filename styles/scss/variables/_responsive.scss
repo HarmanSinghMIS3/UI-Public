@@ -1,0 +1,23 @@
+/* ***************** RESPONSIVE ***************** */
+
+/*
+NOTE: Any viewport width less than 768 pixels wide is a smartphone style.
+
+Sass stylesheets that make use of these values are “mobile first”. Code your smartphone styles first, and then follow the order below.
+*/
+/*
+Bootstrap Breakpoints:
+
+Smartphone: 320px -> 575px (xs)
+Small: 576px -> 767px (sm)
+Tablet: 768px -> 991px (md)
+Small desktop: 992px -> 1199px (lg)
+Medium desktop: 1200px ->1399px (xl)
+Large desktop: 1400px -> ? (xxl)
+*/
+
+$smallBreakpoint: 576px;
+$tabletBreakpoint: 768px;
+$desktopBreakpoint: 992px;
+$mediumDesktopBreakpoint: 1200px;
+$largeDesktopBreakpoint: 1400px;

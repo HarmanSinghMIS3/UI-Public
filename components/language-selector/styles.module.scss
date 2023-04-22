@@ -1,0 +1,20 @@
+@use "../../styles/scss/vars";
+@use "../../styles/scss/buttons";
+
+.languageSelector {
+
+    &__button {
+        @extend .button;
+        color: vars.$bodyBlack;
+        border-color: vars.$buttonBorderGrey;
+        background-color: vars.$white;
+
+        &:hover, &:focus {
+            color: vars.$white;
+            border-color: vars.$bodyBlack;
+            background-color: vars.$bodyBlack;
+        }
+        
+    }
+
+}

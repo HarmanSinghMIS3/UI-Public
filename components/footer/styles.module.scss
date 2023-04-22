@@ -1,0 +1,89 @@
+@use "../../styles/scss/vars";
+@use "../../styles/scss/buttons";
+
+.legalFontSize {
+
+    &__container {
+        width: 100%;
+        display: flex;
+
+        @media #{vars.screenMinWidth(vars.$tabletBreakpoint)} {
+            width: auto;
+            display: inline-block;
+        }
+
+    }
+
+    &__p {
+        margin: {
+            right: auto;
+            bottom: 0.9em;
+            left: auto;
+        }
+        display: inline-block;
+        font-size: vars.$legalFontSizeXs;
+
+        @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+            font-size: vars.$legalFontSizeLg;
+        }
+
+    }
+
+}
+
+.footerNavigation {
+
+    &__container {
+        
+        @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+            display: flex;
+        }
+
+    }
+
+    &__ul {
+        margin-bottom: 0;
+        list-style-type: none;
+
+        @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+            padding-left: 0;
+            display: flex;
+        }
+
+    }
+
+    &__li {
+        margin: 0.25em 0;
+        text-align: right;
+
+        @media #{vars.screenMinWidth(vars.$desktopBreakpoint)} {
+            margin-left: 0.25em;
+        }
+
+    }
+
+    &__link {
+        @extend .button;
+        color: vars.$bodyBlack;
+        border-color: vars.$buttonBorderGrey;
+        background-color: vars.$white;
+
+        &:hover, &:focus {
+            color: vars.$white;
+            background-color: vars.$bodyBlack;
+        }
+
+        &--active {
+            color: vars.$white;
+            background-color: vars.$bodyBlack;
+
+            &:hover, &:focus {
+                color: vars.$bodyBlack;
+                background-color: vars.$white;
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,14 @@
+@use "../../styles/scss/vars";
+
+.dashboardHeader {
+
+    &__container {
+        margin-top: 3.25em;
+    }
+
+    &__heading {
+        margin-bottom: 0.4em;
+        color: vars.$bodyBlack;
+    }
+
+}

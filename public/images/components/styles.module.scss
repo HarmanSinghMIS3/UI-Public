@@ -1,0 +1,74 @@
+@use "../../../styles/scss/vars.scss";
+
+.ontarioCoat0fArms {
+
+    &__svg {
+        display: block;
+
+        &__footer {
+            width: 3.750em; // 60px
+            height: 4em; // 64px
+        }
+
+    }
+
+    &__path {
+
+        &__footer {
+            /// fill: vars.$white;
+            fill: vars.$black;
+        }
+
+    }
+
+}
+
+.placeholderLogoFooter {
+
+    &__svg {
+        display: block;
+
+        &__footer {
+            width: 3.750em; // 60px
+            height: 4em; // 64px
+        }
+
+    }
+
+    &__path {
+
+        &__footer {
+            /// fill: vars.$white;
+            fill: vars.$black;
+        }
+
+    }
+
+}
+
+$checkboxWidth: 1.75em;
+
+.checkBox {
+
+    &__box {
+        fill: vars.$black;
+    }
+    
+    &__checkmark {
+        fill: vars.$black;
+    }
+
+}
+
+.hamburger {
+
+    &__path {
+        stroke: vars.$hamburgerWhite;
+        stroke: {
+            width: 2;
+            linecap: round;
+            miterlimit: 10;
+        }
+    }
+
+}
